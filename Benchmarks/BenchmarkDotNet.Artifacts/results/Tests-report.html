@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Tests</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.10.14, OS=Windows 10.0.17134
+Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical cores
+.NET Core SDK=2.1.300-preview2-008533
+  [Host]     : .NET Core 2.0.7 (CoreCLR 4.6.26328.01, CoreFX 4.6.26403.03), 64bit RyuJIT
+  Job-WOXCRX : .NET Core 2.0.7 (CoreCLR 4.6.26328.01, CoreFX 4.6.26403.03), 64bit RyuJIT
+</code></pre>
+<pre><code>LaunchCount=10  
+</code></pre>
+
+<table>
+<thead><tr><th>             Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Rank</th>
+</tr>
+</thead><tbody><tr><td>XxHash32_AsHexString</td><td>5.612 us</td><td>0.0152 us</td><td>0.0532 us</td><td>5.600 us</td><td>8</td>
+</tr><tr><td>XxHash32_Bytes</td><td>5.213 us</td><td>0.0146 us</td><td>0.0525 us</td><td>5.202 us</td><td>4</td>
+</tr><tr><td>XxHash32_BytesAsInt</td><td>5.356 us</td><td>0.0087 us</td><td>0.0305 us</td><td>5.351 us</td><td>5</td>
+</tr><tr><td>XxHash64_AsHexString</td><td>3.424 us</td><td>0.0060 us</td><td>0.0212 us</td><td>3.421 us</td><td>2</td>
+</tr><tr><td>XxHash64_Bytes</td><td>2.686 us</td><td>0.0052 us</td><td>0.0184 us</td><td>2.684 us</td><td>1</td>
+</tr><tr><td>XxHash64_BytesAsLong</td><td>2.683 us</td><td>0.0047 us</td><td>0.0168 us</td><td>2.683 us</td><td>1</td>
+</tr><tr><td>XxHashDefault_AsHexString</td><td>5.595 us</td><td>0.0110 us</td><td>0.0393 us</td><td>5.588 us</td><td>7</td>
+</tr><tr><td>XxHashDefault_Bytes</td><td>5.191 us</td><td>0.0119 us</td><td>0.0432 us</td><td>5.182 us</td><td>3</td>
+</tr><tr><td>XxHashDefault_BytesAsInt</td><td>5.390 us</td><td>0.0245 us</td><td>0.0868 us</td><td>5.359 us</td><td>6</td>
+</tr></tbody></table>
+</body>
+</html>
